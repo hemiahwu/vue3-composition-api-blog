@@ -1,10 +1,10 @@
 <script setup>
-let name = "mr.wu";
-let age = 30;
+import { ref } from "vue";
+let name = ref("mr.wu");
+let age = ref(30);
 
 const handleClick = () => {
-  name = "米斯特吴";
-  console.log(name);
+  name.value = "米斯特吴";
 };
 </script>
 
