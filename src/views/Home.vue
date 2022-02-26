@@ -1,9 +1,8 @@
 <script setup>
-import Home from "./views/Home.vue";
 </script>
 
 <template>
-  <Home />
+  <div>Home.vue Hello World</div>
 </template>
 
 <style>
