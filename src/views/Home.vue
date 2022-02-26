@@ -10,11 +10,16 @@ const posts = ref([
     id: 2,
   },
 ]);
+
+const showPosts = ref(true);
 </script>
 
 <template>
   <div class="home">
-    <PostList :posts="posts" />
+    <PostList :posts="posts" v-if="showPosts" />
+    <button @click="showPosts = !showPosts">显示/隐藏 PostList组件</button>
+
+    <button @click="posts.pop()">删除一个博客信息</button>
   </div>
 </template>
 
