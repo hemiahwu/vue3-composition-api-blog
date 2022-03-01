@@ -1,6 +1,7 @@
 <script setup>
 import PostList from "../components/PostList.vue";
 import getPosts from '../composibles/getPosts'
+import Spinner from '../components/Spinner.vue'
 
 const {posts,load} = getPosts()
 load()
@@ -12,7 +13,9 @@ load()
     <div v-if="posts.length" class="layout">
       <PostList :posts="posts"  />
     </div>
-    <div v-else>加载中....</div>
+    <div v-else>
+      <Spinner />
+    </div>
   </div>
 </template>
 

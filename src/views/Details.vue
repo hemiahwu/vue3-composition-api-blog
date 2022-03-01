@@ -1,5 +1,7 @@
 <script setup>
 import getPost from '../composibles/getPost'
+import Spinner from '../components/Spinner.vue'
+
 
 const {post,load} = getPost(props.id)
 
@@ -16,7 +18,9 @@ const props = defineProps({
       <h3>{{post.title}}</h3>
       <p class="pre">{{post.body}}</p>
   </div>
-  <div v-else>加载中...</div>
+  <div v-else>
+      <Spinner />
+  </div>
 </template>
 
 <style>
