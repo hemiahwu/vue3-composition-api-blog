@@ -1,28 +1,16 @@
 <script setup>
 import PostList from "../components/PostList.vue";
-import { ref, reactive, computed, watch, watchEffect } from "vue";
-import axios from 'axios'
+import getPosts from '../composibles/getPosts'
 
-const posts = ref([]);
-
-const load = async () => {
-  try {
-    let {data} = await axios("http://localhost:3003/posts")
-    posts.value = data
-  } catch (error) {
-    console.log(error)
-  }
-}
-
+const {posts,load} = getPosts()
 load()
 
-const showPosts = ref(true);
 </script>
 
 <template>
   <div class="home">
     <div v-if="posts.length">
-      <PostList :posts="posts" v-if="showPosts" />
+      <PostList :posts="posts"  />
     </div>
     <div v-else>加载中....</div>
   </div>
