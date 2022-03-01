@@ -1,13 +1,15 @@
 <script setup>
 import getPost from "../composibles/getPost";
 import Spinner from "../components/Spinner.vue";
+import { useRoute } from "vue-router";
 
-const { post, load } = getPost(props.id);
+const route = useRoute();
+const { post, load } = getPost(route.params.id);
 
 load();
 
 const props = defineProps({
-  id: Number,
+  id: String,
 });
 </script>
 

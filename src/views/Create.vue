@@ -1,10 +1,13 @@
 <script setup>
 import { ref } from "vue";
+import axios from "axios";
+import { useRouter } from "vue-router";
 
 const title = ref("");
 const body = ref("");
 const tags = ref([]);
 const tag = ref("");
+const router = useRouter();
 
 const handleKeydown = () => {
   if (!tags.value.includes(tag.value)) {
@@ -14,11 +17,27 @@ const handleKeydown = () => {
 
   tag.value = "";
 };
+
+const handleSubmit = async () => {
+  // 准备数据
+  const post = {
+    id: Math.floor(Math.random() * 10000),
+    title: title.value,
+    body: body.value,
+    tags: tags.value,
+  };
+
+  const data = await axios.post("http://localhost:3003/posts", post);
+
+  if (data.status === 201) {
+    router.push("/");
+  }
+};
 </script>
 
 <template>
   <div class="create">
-    <form>
+    <form @submit.prevent="handleSubmit">
       <label for="title">标题</label>
       <input type="text" v-model="title" required />
       <label for="body">内容</label>
