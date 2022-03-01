@@ -2,15 +2,23 @@
 
 ## 第一章 最终效果演示
 
-![截屏2022-03-01 下午11.28.44](/Users/wuhaiyang/Desktop/截屏 2022-03-01 下午 11.28.44.png)
+### 1. 下载依赖
 
-<div style="page-break-after: always;"></div>
+```bash
+npm install
+```
 
-![截屏2022-03-01 下午11.28.56](/Users/wuhaiyang/Desktop/截屏 2022-03-01 下午 11.28.56.png)
+### 2. 启动前端
 
-![截屏2022-03-01 下午11.29.11](/Users/wuhaiyang/Desktop/截屏 2022-03-01 下午 11.29.11.png)
+```bash
+npm run dev
+```
 
-![image-20220301233106658](/Users/wuhaiyang/Library/Application Support/typora-user-images/image-20220301233106658.png)
+### 3. 启动数据
+
+```bash
+json-server --watch data/db.json --port=3003
+```
 
 ## 第二章 创建项目
 
