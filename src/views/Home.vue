@@ -20,7 +20,7 @@ load();
   </div>
 </template>
 
-<style>
+<style scoped>
 .home {
   max-width: 1200px;
   margin: 0 auto;

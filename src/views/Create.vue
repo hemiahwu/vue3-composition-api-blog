@@ -53,7 +53,7 @@ const handleSubmit = async () => {
   </div>
 </template>
 
-<style>
+<style scoped>
 form {
   max-width: 480px;
   margin: 0 auto;

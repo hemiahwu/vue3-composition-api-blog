@@ -2,7 +2,7 @@
   <div class="spin"></div>
 </template>
 
-<style>
+<style scoped>
 .spin {
   display: block;
   width: 40px;
@@ -15,6 +15,8 @@
 }
 
 @keyframes spin {
-  to { -webkit-transform: rotateZ(360deg);  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
 }
 </style>

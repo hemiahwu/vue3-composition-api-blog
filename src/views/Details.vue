@@ -23,7 +23,7 @@ const props = defineProps({
   </div>
 </template>
 
-<style>
+<style scoped>
 .tags a {
   margin-right: 10px;
 }

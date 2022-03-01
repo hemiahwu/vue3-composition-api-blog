@@ -12,16 +12,16 @@ const snippet = computed(() => {
 
 <template>
   <div class="post">
-    <router-link :to="{name: 'Details',params: {id: post.id}}">
+    <router-link :to="{ name: 'Details', params: { id: post.id } }">
       <h3>{{ post.title }}</h3>
     </router-link>
     <p>{{ snippet }}</p>
-    <span v-for="tag in post.tags" :key="tag">#{{tag}}</span>
+    <span v-for="tag in post.tags" :key="tag">#{{ tag }}</span>
   </div>
 </template>
 
 
-<style>
+<style scoped>
 .post {
   margin: 0 40px 30px;
   padding-bottom: 30px;
