@@ -2,7 +2,9 @@
   <div class="tag-cloud">
     <h3>标签</h3>
     <div v-for="tag in tags" :key="tag">
-      <router-link to="/"> #{{ tag }} </router-link>
+      <router-link :to="{ name: 'Tag', params: { tag } }">
+        #{{ tag }}
+      </router-link>
     </div>
   </div>
 </template>
