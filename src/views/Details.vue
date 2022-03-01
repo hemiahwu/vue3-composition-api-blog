@@ -1,25 +1,23 @@
 <script setup>
-import getPost from '../composibles/getPost'
-import Spinner from '../components/Spinner.vue'
+import getPost from "../composibles/getPost";
+import Spinner from "../components/Spinner.vue";
 
+const { post, load } = getPost(props.id);
 
-const {post,load} = getPost(props.id)
-
-load()
+load();
 
 const props = defineProps({
   id: Number,
 });
-
 </script>
 
 <template>
   <div class="post" v-if="post">
-      <h3>{{post.title}}</h3>
-      <p class="pre">{{post.body}}</p>
+    <h3>{{ post.title }}</h3>
+    <p class="pre">{{ post.body }}</p>
   </div>
   <div v-else>
-      <Spinner />
+    <Spinner />
   </div>
 </template>
 
